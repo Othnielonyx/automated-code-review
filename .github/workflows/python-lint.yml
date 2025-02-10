@@ -32,7 +32,7 @@ jobs:
           pylint $(git ls-files '*.py') --output-format=parseable > pylint-report.txt
 
       - name: Upload Lint Report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: pylint-report
           path: pylint-report.txt
