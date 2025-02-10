@@ -41,3 +41,9 @@ jobs:
         run: |
           pylint $(git ls-files '*.py') --output-format=json > pylint.json
           python convert_pylint_to_annotations.py
+
+
+      - name: Debug Pylint Output
+        run: |
+          pylint $(git ls-files '*.py') --output-format=parseable | tee pylint-report.txt
+
