@@ -27,9 +27,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install pylint
 
+      - name: Debug: List Python Files
+        run: |
+          echo "Listing Python files..."
+          git ls-files '*.py'
+      
       - name: Run Pylint on All Files
         run: |
-          pylint $(git ls-files '*.py') --output-format=parseable > pylint-report.txt
+          pylint $(git ls-files '*.py') --output-format=parseable | tee pylint-report.txt
 
       - name: Upload Lint Report
         uses: actions/upload-artifact@v4
