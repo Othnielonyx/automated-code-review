@@ -1,0 +1,4 @@
+[MESSAGES CONTROL]
+disable=all
+enable=E,W,C,R  # Enable errors, warnings, conventions, refactors
+
